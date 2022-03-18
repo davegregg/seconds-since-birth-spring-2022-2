@@ -1,5 +1,8 @@
 { // Version 1: MVP.
-    let calculateSecondsAlive = function (birthMonth, birthYear) {
+    let calculateSecondsAlive = function (birthMonthInput, birthYearInput) {
+        let birthMonth = parseInt(birthMonthInput)
+        let birthYear = parseInt(birthYearInput)
+
         let currentMonth = new Date().getMonth() + 1
         let currentYear = new Date().getFullYear()
         let secondsInMonth = 60 * 60 * 24 * 30
@@ -19,7 +22,13 @@
     let feb1997 = calculateSecondsAlive(2, 1997)
     let dec2008 = calculateSecondsAlive(12, 2008)
 
-    console.log({ feb1997, dec2008 })
+    let userBirthMonth = prompt("What month were you born (in number format; for example, '8')?", 6)
+    let userBirthYear = prompt("What year were you born? (And don't give us any rambling stories about your birth!)", 1999)
+
+    let userResult = calculateSecondsAlive(userBirthMonth, userBirthYear)
+    document.write("<h2>Results</h2><p>" + userResult.toLocaleString() + "</p>")
+
+    console.log({feb1997, dec2008})
 }
 
 
@@ -51,3 +60,16 @@
 
     console.log({ feb1997, dec2008 })
 }
+
+
+{
+    // let name = prompt("What is your name?")
+    // document.write("<p>" + name + "</p>")
+
+
+    // document.write("<p>Ajay was walking down the street, feeding stray cats tater tots out of his pocket like Napoleon Dynamite.</p>")
+}
+
+// blocking code
+// synchronous programming (sync)
+// asynchronous programming (async)
